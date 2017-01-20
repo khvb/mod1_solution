@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="TestApp">
+<head>
+  <meta charset="utf-8">
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>Mod1 solution</title>
+</head>
+<body ng-controller="TestController">
+<h1>Mod1 solution</h1>
+  <div>
+    Your lunch menu is:
+    <input type="text"
+           ng-model="lunchlist">
+  </div>
+  <div>
+  <button ng-click="displayMenu()">
+      Check if too much
+  </button>
+  </div>
+
+  <p class="good">
+    {{resolution}}
+  </p>
+
+  <p class="error">
+    {{nodata}}
+  </p>
+
+</body>
+</html>

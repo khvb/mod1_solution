@@ -1,0 +1,21 @@
+body {
+  font-size: 1.2em;
+}
+
+p {
+  border: 5px red solid;
+}
+p.good {
+  color: chartreuse;
+  border: chartreuse;
+}
+p.error {
+  color: red;
+  border: red;
+}
+p.text {
+  color: black;
+  border-style: solid;
+  border: 5px lightseagreen;
+
+}
