@@ -4,25 +4,34 @@
     angular.module('TestApp', [])
 
         .controller('TestController', TestController);
-	TestController.$inject = ['$scope'];
+
+	      TestController.$inject = ['$scope'];
+
         function TestController($scope) {
             $scope.lunchlist = "";
-            $scope.nodata = "";
-            $scope.resolution="";
-            $scope.displayMenu = function () {
-                $scope.outmenu = "";
+
+            $scope.displayRecomendation = function () {
                 $scope.nodata = "";
                 $scope.resolution="";
-                var items=[];
-                var lunch=$scope.lunchlist;
-                items=lunch.split(",");
                 if ($scope.lunchlist == "")
                     $scope.nodata = "Please enter data first"
-                else
-                    if (items.length>3)
-                    $scope.resolution="Too much!"
+                else {
+// remove spaces
+                    var re = / /g;
+		                var list1 = $scope.lunchlist.replace(re, '');
+		    		        var items=[];
+                    items=list1.split(",");
+// count only nonempty entries
+                    var quantityofitem=0;
+                    for (var i=0; i<items.length; i++) {
+                      if (items[i] > "")
+                        quantityofitem++;
+                    }
+                    if (quantityofitem>3)
+                        $scope.resolution="Too much!"
                     else
-                    $scope.resolution="Enjoy!";
+                        $scope.resolution="Enjoy!";
+		  };
             };
         }
 })();
