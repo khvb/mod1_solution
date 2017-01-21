@@ -8,7 +8,7 @@
 	      TestController.$inject = ['$scope'];
 
         function TestController($scope) {
-            $scope.lunchlist = "";
+            $scope.lunchlist = "list comma separated dishes you usually have for lunch";
 
             $scope.displayRecomendation = function () {
                 $scope.nodata = "";
